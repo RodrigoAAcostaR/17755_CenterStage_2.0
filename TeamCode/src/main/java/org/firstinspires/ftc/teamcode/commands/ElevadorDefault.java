@@ -46,7 +46,6 @@ public class ElevadorDefault extends CommandBase {
         if(gamepad.getTrigger(GamepadKeys.Trigger.RIGHT_TRIGGER) > .5){
             CommandScheduler.getInstance().schedule(new InstantCommand(intake::servoA));
             CommandScheduler.getInstance().schedule(new ElevadorGoToPosition(elevator, 1140));
-
         }
 
         if (gamepad.getTrigger(GamepadKeys.Trigger.LEFT_TRIGGER) > .5){
@@ -55,7 +54,7 @@ public class ElevadorDefault extends CommandBase {
         }
 
         if(elevator.isAtSetpoint()){
-            intake.servoB();
+            intake.dejar();
         }
 
 
