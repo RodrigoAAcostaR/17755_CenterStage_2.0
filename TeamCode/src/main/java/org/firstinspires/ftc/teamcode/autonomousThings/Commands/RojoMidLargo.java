@@ -20,11 +20,7 @@ public class RojoMidLargo extends SequentialCommandGroup {
             }
         };
 
-        addCommands(new TrajectoryFollowerCommand(drive, redLong.RojoLargo1(drive.getDrive())),
-                new TrajectoryFollowerCommand(drive, redLong.RojoLargo2(drive.getDrive())),
-                new TrajectoryFollowerCommand(drive, redLong.RojoLargo3(drive.getDrive())),
-                new TrajectoryFollowerCommand(drive, redLong.RojoLargo4(drive.getDrive())),
-                new TrajectoryFollowerCommand(drive, redLong.RojoLargo5(drive.getDrive()))
+        addCommands(new TrajectoryFollowerCommand(drive, redLong.rojo(drive.getDrive()))
         );
     }
 }

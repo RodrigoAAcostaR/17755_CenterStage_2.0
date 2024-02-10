@@ -57,7 +57,7 @@ public class TeleOpModeFieldCentric2P extends CommandOpMode {
         ));
 
         elevador.setDefaultCommand(new ElevadorDefault(elevador, gamepadC, intake));
-        escalador.setDefaultCommand(new EscaladorDefault(escalador, gamepadC));
+        escalador.setDefaultCommand(new EscaladorDefault(escalador, gamepadDriver));
 
         schedule(new RunCommand(() -> {
             driveSystem.update();

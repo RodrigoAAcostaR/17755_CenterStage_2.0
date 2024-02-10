@@ -57,6 +57,14 @@ public class TeleOpMode extends CommandOpMode {
         new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.DPAD_RIGHT)
                 .whenPressed(()-> escalador.open());
 
+        new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.A)
+                .whenPressed(()-> elevador.leave());
+
+        new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.B)
+                .whenPressed(()-> elevador.recall());
+
+        new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.X)
+                .whenPressed(()-> elevador.mid());
 
         new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.RIGHT_STICK_BUTTON)
                 .whenPressed(()-> driveSystem.toggleInverted());
