@@ -66,4 +66,30 @@ public class AzulCorto {
                 .lineToLinearHeading(new Pose2d(77, -20, Math.toRadians(180)))
                 .build();
     }
+
+    public Trajectory azulDer1(SampleMecanumDrive drive){
+        Pose2d firstPose = new Pose2d(12.29, 66.17, Math.toRadians(90));
+        drive.setPoseEstimate(firstPose);
+        return drive.trajectoryBuilder(firstPose)
+                .lineToSplineHeading(new Pose2d(7, 17, Math.toRadians(0)))
+                .build();
+    }
+
+    public Trajectory azulDer2(SampleMecanumDrive drive){
+        return drive.trajectoryBuilder(new Pose2d(7, 17, Math.toRadians(0)))
+                .splineToSplineHeading(new Pose2d(78, 20, Math.toRadians(0)), Math.toRadians(0))
+                .build();
+    }
+
+    public Trajectory azulDer3(SampleMecanumDrive drive){
+        return drive.trajectoryBuilder(new Pose2d(78, 20, Math.toRadians(0)))
+                .back(10)
+                .build();
+    }
+
+    public Trajectory azulDer4(SampleMecanumDrive drive){
+        return drive.trajectoryBuilder(new Pose2d(70, 20, Math.toRadians(0)))
+                .lineToSplineHeading(new Pose2d(77, -20, Math.toRadians(180)))
+                .build();
+    }
 }

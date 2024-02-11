@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.autonomousThings.Commands;
+package org.firstinspires.ftc.teamcode.autonomousThings.Commands.Blue;
 
 import com.arcrobotics.ftclib.command.InstantCommand;
 import com.arcrobotics.ftclib.command.SequentialCommandGroup;
@@ -18,7 +18,7 @@ public class AzulMidCorto  extends SequentialCommandGroup {
         addCommands(new TrajectoryFollowerCommand(drive, azulCorto.azulMid1(drive.getDrive())),
                 new TrajectoryFollowerCommand(drive, azulCorto.azulMid2(drive.getDrive())),
                 new InstantCommand(elevador::mid),
-                new WaitCommand(700),
+                new WaitCommand(500),
                 new InstantCommand(elevador::leave),
                 new WaitCommand(500),
                 new TrajectoryFollowerCommand(drive, azulCorto.azulMid3(drive.getDrive())),

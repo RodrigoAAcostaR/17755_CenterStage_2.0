@@ -21,6 +21,7 @@ public class Escalador extends SubsystemBase {
 
         escalador = hardwareMap.get(DcMotorEx.class, "escalador");
         escalador.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
         launcher = hardwareMap.get(Servo.class, "launcher");
 
     }

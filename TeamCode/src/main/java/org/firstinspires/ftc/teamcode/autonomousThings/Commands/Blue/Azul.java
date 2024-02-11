@@ -1,9 +1,8 @@
-package org.firstinspires.ftc.teamcode.autonomousThings.Commands;
+package org.firstinspires.ftc.teamcode.autonomousThings.Commands.Blue;
 
 import com.arcrobotics.ftclib.command.CommandOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
-import org.firstinspires.ftc.teamcode.autonomousThings.Trajectories.AzulCorto;
 import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
 import org.firstinspires.ftc.teamcode.subsystems.Elevador;
 import org.firstinspires.ftc.teamcode.subsystems.Intake;
@@ -14,6 +13,7 @@ public class Azul extends CommandOpMode {
 
     AzulMidCorto azulMidCorto;
     AzulIzqCorto azulIzqCorto;
+    AzulDerCorto azulDerCorto;
     Elevador elevador;
     SampleMecanumDrive drive;
     MecanumDriveSubsystem driveSubsystem;
@@ -27,6 +27,7 @@ public class Azul extends CommandOpMode {
         driveSubsystem = new MecanumDriveSubsystem(drive, false);
         //azulMidCorto = new AzulMidCorto(driveSubsystem, elevador);
         azulIzqCorto = new AzulIzqCorto(driveSubsystem, elevador);
+        //azulDerCorto = new AzulDerCorto(driveSubsystem, elevador);
 
         schedule(azulIzqCorto);
     }

@@ -45,7 +45,7 @@ public class ElevadorDefault extends CommandBase {
         //Por posiciones
         if(gamepad.getTrigger(GamepadKeys.Trigger.RIGHT_TRIGGER) > .5){
             CommandScheduler.getInstance().schedule(new InstantCommand(intake::servoA));
-            CommandScheduler.getInstance().schedule(new ElevadorGoToPosition(elevator, 1140));
+            CommandScheduler.getInstance().schedule(new ElevadorGoToPosition(elevator, 1100));
         }
 
         if (gamepad.getTrigger(GamepadKeys.Trigger.LEFT_TRIGGER) > .5){
