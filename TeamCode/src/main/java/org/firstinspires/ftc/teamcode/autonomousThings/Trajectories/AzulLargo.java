@@ -19,5 +19,6 @@ public class AzulLargo {
         return drive.trajectoryBuilder(new Pose2d(-39, 16.17))
                 .lineToLinearHeading(new Pose2d(-39, 66.17, Math.toRadians(0)))
                 .build();
+
     }
 }
