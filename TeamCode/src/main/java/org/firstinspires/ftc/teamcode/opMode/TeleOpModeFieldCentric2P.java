@@ -36,18 +36,33 @@ public class TeleOpModeFieldCentric2P extends CommandOpMode {
                 .whenReleased(()-> intake.setPower(0));
 
         new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.LEFT_BUMPER)
-            .whileHeld(()-> intake.setPower(-.4))
+                .whileHeld(()-> intake.setPower(-.4))
                 .whenReleased(()-> intake.setPower(0));
 
-        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.DPAD_LEFT)
+        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.B)
                 .whenPressed(()-> escalador.launch());
 
-        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.DPAD_UP)
+        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.Y)
                 .whenPressed(()-> escalador.setLaunch());
 
-        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.DPAD_RIGHT)
+        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.X)
                 .whenPressed(()-> escalador.open());
 
+        new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.A)
+                .whenPressed(()-> escalador.setPosition(0));
+
+        new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.B)
+                .whenPressed(()-> escalador.setPosition(2500));
+
+        new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.LEFT_BUMPER)
+                .whileHeld(()-> intake.setPower(-.4))
+                .whenReleased(()-> intake.setPower(0));
+
+        new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.RIGHT_BUMPER)
+                .whenPressed(()-> elevador.setPosition(1, 1250));
+
+        new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.Y)
+                .whenPressed(()-> escalador.setPosition(4500));
 
         new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.RIGHT_STICK_BUTTON)
                 .whenPressed(()-> driveSystem.toggleInverted());
@@ -57,7 +72,6 @@ public class TeleOpModeFieldCentric2P extends CommandOpMode {
         ));
 
         elevador.setDefaultCommand(new ElevadorDefault(elevador, gamepadC, intake));
-        escalador.setDefaultCommand(new EscaladorDefault(escalador, gamepadDriver));
 
         schedule(new RunCommand(() -> {
             driveSystem.update();

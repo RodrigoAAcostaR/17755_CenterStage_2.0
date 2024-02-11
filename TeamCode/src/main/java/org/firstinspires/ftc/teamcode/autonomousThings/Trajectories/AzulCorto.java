@@ -44,18 +44,24 @@ public class AzulCorto {
     }
 
     public Trajectory azulIzq2(SampleMecanumDrive drive){
-        return drive.trajectoryBuilder(new Pose2d(28, 26))
-                .splineToSplineHeading(new Pose2d(80, 44, Math.toRadians(0)), Math.toRadians(0))
+        return drive.trajectoryBuilder(new Pose2d(28, 26, Math.toRadians(90)))
+                .forward(20)
                 .build();
     }
 
     public Trajectory azulIzq3(SampleMecanumDrive drive){
-        return drive.trajectoryBuilder(new Pose2d(80, 44, Math.toRadians(0)))
-                .back(10)
+        return drive.trajectoryBuilder(new Pose2d(28, 26, Math.toRadians(90)))
+                .splineToSplineHeading(new Pose2d(80, 48, Math.toRadians(0)), Math.toRadians(0))
                 .build();
     }
 
     public Trajectory azulIzq4(SampleMecanumDrive drive){
+        return drive.trajectoryBuilder(new Pose2d(80, 48, Math.toRadians(0)))
+                .back(10)
+                .build();
+    }
+
+    public Trajectory azulIzq5(SampleMecanumDrive drive){
         return drive.trajectoryBuilder(new Pose2d(70, 44, Math.toRadians(0)))
                 .lineToLinearHeading(new Pose2d(77, -20, Math.toRadians(180)))
                 .build();

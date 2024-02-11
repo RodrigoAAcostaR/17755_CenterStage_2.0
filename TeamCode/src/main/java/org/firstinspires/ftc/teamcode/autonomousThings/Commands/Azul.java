@@ -25,9 +25,9 @@ public class Azul extends CommandOpMode {
         intake = new Intake(hardwareMap, telemetry);
         elevador = new Elevador(hardwareMap, telemetry);
         driveSubsystem = new MecanumDriveSubsystem(drive, false);
-        azulMidCorto = new AzulMidCorto(driveSubsystem, elevador);
-        //azulIzqCorto = new AzulIzqCorto(driveSubsystem, elevador);
+        //azulMidCorto = new AzulMidCorto(driveSubsystem, elevador);
+        azulIzqCorto = new AzulIzqCorto(driveSubsystem, elevador);
 
-        schedule(azulMidCorto);
+        schedule(azulIzqCorto);
     }
 }
