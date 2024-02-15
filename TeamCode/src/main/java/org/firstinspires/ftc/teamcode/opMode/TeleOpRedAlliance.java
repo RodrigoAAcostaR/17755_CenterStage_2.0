@@ -8,7 +8,6 @@ import com.arcrobotics.ftclib.gamepad.GamepadKeys;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.commands.ElevadorDefault;
-import org.firstinspires.ftc.teamcode.commands.EscaladorDefault;
 import org.firstinspires.ftc.teamcode.commands.MecanumDriveCommand;
 import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
 import org.firstinspires.ftc.teamcode.subsystems.Elevador;
@@ -17,11 +16,11 @@ import org.firstinspires.ftc.teamcode.subsystems.Intake;
 import org.firstinspires.ftc.teamcode.subsystems.MecanumDriveSubsystem;
 
 @TeleOp
-public class TeleOpModeFieldCentric2P extends CommandOpMode {
+public class TeleOpRedAlliance extends CommandOpMode {
     @Override
     public void initialize() {
         SampleMecanumDrive sampleMecanumDrive = new SampleMecanumDrive(hardwareMap);
-        MecanumDriveSubsystem driveSystem = new MecanumDriveSubsystem(sampleMecanumDrive, true);
+        MecanumDriveSubsystem driveSystem = new MecanumDriveSubsystem(sampleMecanumDrive, true, true);
         Intake intake = new Intake(hardwareMap, telemetry);
         Elevador elevador = new Elevador(hardwareMap, telemetry);
         Escalador escalador = new Escalador(hardwareMap, telemetry);
@@ -53,13 +52,6 @@ public class TeleOpModeFieldCentric2P extends CommandOpMode {
 
         new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.B)
                 .whenPressed(()-> escalador.setPosition(2500));
-
-        new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.LEFT_BUMPER)
-                .whileHeld(()-> intake.setPower(-.4))
-                .whenReleased(()-> intake.setPower(0));
-
-        new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.RIGHT_BUMPER)
-                .whenPressed(()-> elevador.setPosition(1, 1250));
 
         new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.Y)
                 .whenPressed(()-> escalador.setPosition(4500));

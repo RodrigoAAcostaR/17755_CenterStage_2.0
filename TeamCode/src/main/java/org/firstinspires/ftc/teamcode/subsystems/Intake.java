@@ -34,8 +34,8 @@ public class Intake extends SubsystemBase {
     }
 
     public void servoA(){
-        x1.turnToAngle(5);
-        x2.turnToAngle(5);
+        x1.turnToAngle(45);
+        x2.turnToAngle(45);
     }
 
     public void servoB(){
@@ -43,8 +43,13 @@ public class Intake extends SubsystemBase {
         x2.turnToAngle(65);
     }
 
+    public void stack(){
+        x1.turnToAngle(100);
+        x2.turnToAngle(100);
+    }
+
     public void dejar(){
-        x1.turnToAngle(70);
-        x2.turnToAngle(70);
+        x1.turnToAngle(80);
+        x2.turnToAngle(80);
     }
 }

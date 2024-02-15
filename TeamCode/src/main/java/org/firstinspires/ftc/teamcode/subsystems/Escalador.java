@@ -1,19 +1,22 @@
 package org.firstinspires.ftc.teamcode.subsystems;
 
 import com.arcrobotics.ftclib.command.SubsystemBase;
+import com.arcrobotics.ftclib.hardware.ServoEx;
+import com.arcrobotics.ftclib.hardware.SimpleServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
+import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
 public class Escalador extends SubsystemBase {
     private DcMotorEx escalador;
     private Telemetry telemetry;
     private HardwareMap hardwareMap;
 
-    private Servo launcher;
+    private ServoEx launcher;
 
     public Escalador(HardwareMap hardwareMap, Telemetry telemetry){
         this.hardwareMap = hardwareMap;
@@ -21,8 +24,8 @@ public class Escalador extends SubsystemBase {
 
         escalador = hardwareMap.get(DcMotorEx.class, "escalador");
         escalador.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-
-        launcher = hardwareMap.get(Servo.class, "launcher");
+        escalador.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        launcher = new SimpleServo(hardwareMap, "launcher", 0, 180, AngleUnit.DEGREES);
 
     }
 
@@ -37,15 +40,15 @@ public class Escalador extends SubsystemBase {
     }
 
     public void launch(){
-        launcher.setPosition(.95);
+        launcher.turnToAngle(150);
     }
 
     public void setLaunch(){
-        launcher.setPosition(.4);
+        launcher.turnToAngle(25);
     }
 
     public void open(){
-        launcher.setPosition(0);
+        launcher.turnToAngle(0);
     }
 
     public boolean isAtSetpoint() {
@@ -55,7 +58,7 @@ public class Escalador extends SubsystemBase {
 
     @Override
     public void periodic(){
-        telemetry.addData("Elevador: ", escalador.getCurrentPosition());
+        telemetry.addData("Escalador: ", escalador.getCurrentPosition());
     }
 
 }

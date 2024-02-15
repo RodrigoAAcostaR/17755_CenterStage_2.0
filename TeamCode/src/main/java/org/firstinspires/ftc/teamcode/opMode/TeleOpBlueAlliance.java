@@ -16,11 +16,11 @@ import org.firstinspires.ftc.teamcode.subsystems.Intake;
 import org.firstinspires.ftc.teamcode.subsystems.MecanumDriveSubsystem;
 
 @TeleOp
-public class TeleOpModeFieldCentric extends CommandOpMode {
+public class TeleOpBlueAlliance extends CommandOpMode {
     @Override
     public void initialize() {
         SampleMecanumDrive sampleMecanumDrive = new SampleMecanumDrive(hardwareMap);
-        MecanumDriveSubsystem driveSystem = new MecanumDriveSubsystem(sampleMecanumDrive, true);
+        MecanumDriveSubsystem driveSystem = new MecanumDriveSubsystem(sampleMecanumDrive, true, false);
         Intake intake = new Intake(hardwareMap, telemetry);
         Elevador elevador = new Elevador(hardwareMap, telemetry);
         Escalador escalador = new Escalador(hardwareMap, telemetry);
@@ -35,27 +35,26 @@ public class TeleOpModeFieldCentric extends CommandOpMode {
                 .whenReleased(()-> intake.setPower(0));
 
         new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.LEFT_BUMPER)
-            .whileHeld(()-> intake.setPower(-.4))
+                .whileHeld(()-> intake.setPower(-.4))
                 .whenReleased(()-> intake.setPower(0));
 
-        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.Y)
-                .whenPressed(()-> escalador.setPosition(4500));
-
-        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.A)
-                .whenPressed(()-> escalador.setPosition(0));
-
-        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.X)
-                .whenPressed(()-> escalador.setPosition(2500));
-
-        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.DPAD_LEFT)
+        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.B)
                 .whenPressed(()-> escalador.launch());
 
-        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.DPAD_UP)
+        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.Y)
                 .whenPressed(()-> escalador.setLaunch());
 
-        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.DPAD_RIGHT)
+        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.X)
                 .whenPressed(()-> escalador.open());
 
+        new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.A)
+                .whenPressed(()-> escalador.setPosition(0));
+
+        new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.B)
+                .whenPressed(()-> escalador.setPosition(2500));
+
+        new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.Y)
+                .whenPressed(()-> escalador.setPosition(4500));
 
         new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.RIGHT_STICK_BUTTON)
                 .whenPressed(()-> driveSystem.toggleInverted());
@@ -64,7 +63,7 @@ public class TeleOpModeFieldCentric extends CommandOpMode {
                 driveSystem, () -> -gamepadDriver.getLeftY(), gamepadDriver::getLeftX, gamepadDriver::getRightX
         ));
 
-        elevador.setDefaultCommand(new ElevadorDefault(elevador, gamepadDriver, intake));
+        elevador.setDefaultCommand(new ElevadorDefault(elevador, gamepadC, intake));
 
         schedule(new RunCommand(() -> {
             driveSystem.update();

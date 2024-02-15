@@ -26,22 +26,22 @@ public class ElevadorDefault extends CommandBase {
     @Override
     public void execute() {
         //Por poder
-/*
-        if(gamepad.getTrigger(GamepadKeys.Trigger.RIGHT_TRIGGER) > .9){
+
+        if(gamepad.getTrigger(GamepadKeys.Trigger.RIGHT_TRIGGER) > .5){
             elevator.setPower(1);
         }else if(gamepad.getTrigger(GamepadKeys.Trigger.RIGHT_TRIGGER) > 0){
             elevator.setPower(0);
         }
-        if (gamepad.getTrigger(GamepadKeys.Trigger.LEFT_TRIGGER) > .9){
+        if (gamepad.getTrigger(GamepadKeys.Trigger.LEFT_TRIGGER) > .5){
             elevator.setPower(-1);
         }else if(gamepad.getTrigger(GamepadKeys.Trigger.LEFT_TRIGGER) > 0){
             elevator.setPower(0);
         }
 
- */
 
 
 
+/*
         //Por posiciones
         if(gamepad.getTrigger(GamepadKeys.Trigger.RIGHT_TRIGGER) > .5){
             CommandScheduler.getInstance().schedule(new InstantCommand(intake::servoA));
@@ -56,6 +56,8 @@ public class ElevadorDefault extends CommandBase {
         if(elevator.isAtSetpoint()){
             intake.dejar();
         }
+
+ */
 
 
 
