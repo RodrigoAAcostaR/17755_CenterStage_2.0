@@ -58,7 +58,7 @@ public class TeleOpMode2P extends CommandOpMode {
                 .whenPressed(()-> escalador.setPosition(2500));
 
         new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.Y)
-                .whenPressed(()-> escalador.setPosition(4500));
+                .whenPressed(()-> escalador.setPosition(4300));
 
         new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.DPAD_LEFT)
                 .whenPressed(()-> elevador.mid());

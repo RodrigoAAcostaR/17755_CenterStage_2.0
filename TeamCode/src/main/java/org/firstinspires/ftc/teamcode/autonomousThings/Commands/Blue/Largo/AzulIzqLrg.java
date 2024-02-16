@@ -11,8 +11,17 @@ import org.firstinspires.ftc.teamcode.subsystems.Elevador;
 import org.firstinspires.ftc.teamcode.subsystems.Intake;
 import org.firstinspires.ftc.teamcode.subsystems.MecanumDriveSubsystem;
 
+import java.util.function.BooleanSupplier;
+
 public class AzulIzqLrg extends SequentialCommandGroup {
     AzulLargo azulLargo = new AzulLargo();
+
+    BooleanSupplier sup = new BooleanSupplier() {
+        @Override
+        public boolean getAsBoolean() {
+            return AzulIzqLrg.super.isScheduled();
+        }
+    };
 
     public AzulIzqLrg(MecanumDriveSubsystem drive, Intake intake, Elevador elevador){
         addCommands(

@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
 import org.firstinspires.ftc.teamcode.autonomousThings.Commands.Blue.Largo.AzulDerLrg;
 import org.firstinspires.ftc.teamcode.autonomousThings.Commands.Blue.Largo.AzulIzqLrg;
-import org.firstinspires.ftc.teamcode.autonomousThings.Commands.Blue.Largo.AzulMidLargo;
+import org.firstinspires.ftc.teamcode.autonomousThings.Commands.Blue.Largo.AzulMidLrg;
 import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
 import org.firstinspires.ftc.teamcode.subsystems.Elevador;
 import org.firstinspires.ftc.teamcode.subsystems.Intake;
@@ -14,7 +14,7 @@ import org.firstinspires.ftc.teamcode.subsystems.MecanumDriveSubsystem;
 @Autonomous
 public class Azul extends CommandOpMode {
 
-    AzulMidLargo azulMidLargo;
+    AzulMidLrg azulMidLargo;
     AzulDerLrg azulDerLrg;
     AzulIzqLrg azulIzqLrg;
     Elevador elevador;

@@ -54,7 +54,7 @@ public class TeleOpRedAlliance extends CommandOpMode {
                 .whenPressed(()-> escalador.setPosition(2500));
 
         new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.Y)
-                .whenPressed(()-> escalador.setPosition(4500));
+                .whenPressed(()-> escalador.setPosition(4300));
 
         new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.RIGHT_STICK_BUTTON)
                 .whenPressed(()-> driveSystem.toggleInverted());
