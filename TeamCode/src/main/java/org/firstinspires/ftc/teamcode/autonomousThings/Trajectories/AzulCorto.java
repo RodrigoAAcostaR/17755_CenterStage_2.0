@@ -13,12 +13,12 @@ public class AzulCorto {
         Pose2d firstPose = new Pose2d(12.29, 66.17, Math.toRadians(90));
         drive.setPoseEstimate(firstPose);
         return drive.trajectoryBuilder(firstPose)
-                .back(50)
+                .back(53)
                 .build();
     }
 
     public Trajectory azulMid2(SampleMecanumDrive drive){
-        return drive.trajectoryBuilder(new Pose2d(12.29, 16.17, Math.toRadians(90)))
+        return drive.trajectoryBuilder(new Pose2d(12.29, 13.17, Math.toRadians(90)))
                 .splineToSplineHeading(new Pose2d(77, 35, Math.toRadians(0.00)), Math.toRadians(0.00))
                 .build();
     }
@@ -39,7 +39,7 @@ public class AzulCorto {
         Pose2d firstPose = new Pose2d(12.29, 66.17, Math.toRadians(90));
         drive.setPoseEstimate(firstPose);
         return drive.trajectoryBuilder(firstPose)
-                .lineTo(new Vector2d(28, 26))
+                .lineTo(new Vector2d(34, 26))
                 .build();
     }
 
@@ -50,7 +50,7 @@ public class AzulCorto {
     }
 
     public Trajectory azulIzq3(SampleMecanumDrive drive){
-        return drive.trajectoryBuilder(new Pose2d(28, 26, Math.toRadians(90)))
+        return drive.trajectoryBuilder(new Pose2d(34, 26, Math.toRadians(90)))
                 .splineToSplineHeading(new Pose2d(80, 48, Math.toRadians(0)), Math.toRadians(0))
                 .build();
     }

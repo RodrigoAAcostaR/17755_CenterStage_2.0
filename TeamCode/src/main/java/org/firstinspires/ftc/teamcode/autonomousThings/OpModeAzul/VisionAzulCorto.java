@@ -64,7 +64,7 @@ public class VisionAzulCorto extends CommandOpMode {
 
         while(!isStarted()){
             telemetry.addData("Coordinate", "(" + (int) cX + ", " + (int) cY + ")");
-            if (getDistance(width) < 100) {
+            if (getDistance(width) < 500) {
                 if (cX < 400 && cX > 1) {
                     telemetry.addLine("A la izquierda");
                     CommandScheduler.getInstance().schedule(new AzulIzqCorto(drive, elevador));
@@ -177,7 +177,7 @@ public class VisionAzulCorto extends CommandOpMode {
         }
 
         private MatOfPoint findLargestContour(List<MatOfPoint> contours) {
-            double maxArea = 0;
+            double maxArea = 60;
             MatOfPoint largestContour = null;
 
             for (MatOfPoint contour : contours) {

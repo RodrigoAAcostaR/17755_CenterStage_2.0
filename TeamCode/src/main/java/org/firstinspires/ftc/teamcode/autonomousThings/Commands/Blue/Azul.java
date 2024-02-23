@@ -11,7 +11,7 @@ import org.firstinspires.ftc.teamcode.subsystems.Elevador;
 import org.firstinspires.ftc.teamcode.subsystems.Intake;
 import org.firstinspires.ftc.teamcode.subsystems.MecanumDriveSubsystem;
 
-@Autonomous
+
 public class Azul extends CommandOpMode {
 
     AzulMidLrg azulMidLargo;

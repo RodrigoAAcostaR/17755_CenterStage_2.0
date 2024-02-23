@@ -59,11 +59,11 @@ public class VisionRojaCorto extends CommandOpMode {
         while(opModeInInit()) {
             telemetry.addData("Coordinate", "(" + (int) cX + ", " + (int) cY + ")");
             if (getDistance(width) < 100) {
-                if (cX < 400 && cX > 1) {
+                if (cX < 250 && cX > 1) {
                     telemetry.addData("Posicion", "A la izquierda");
                     CommandScheduler.getInstance().schedule(new RojoIzqCorto(drive, elevador));
                 }
-                else if (cX > 400 && cX < 643) {
+                else if (cX > 250 && cX < 500) {
                     telemetry.addData("Posicion", "En medio");
                     CommandScheduler.getInstance().schedule(new RojoMidCorto(drive, elevador));
                 }
@@ -83,10 +83,10 @@ public class VisionRojaCorto extends CommandOpMode {
         telemetry.addData("Distance in Inch", (getDistance(width)));
         telemetry.update();
 
-        if(cX < 400 && cX >1) {
+        if(cX < 250 && cX >1) {
             CommandScheduler.getInstance().schedule(new RojoIzqCorto(drive, elevador));
         }
-        else if(cX > 400 && cX < 643)  {
+        else if(cX > 250 && cX < 500)  {
             CommandScheduler.getInstance().schedule(new RojoMidCorto(drive, elevador));
         }else {
             CommandScheduler.getInstance().schedule(new RojoDerCorto(drive, elevador));

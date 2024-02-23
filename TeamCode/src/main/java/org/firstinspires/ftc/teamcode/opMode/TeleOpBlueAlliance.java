@@ -47,6 +47,15 @@ public class TeleOpBlueAlliance extends CommandOpMode {
         new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.X)
                 .whenPressed(()-> escalador.open());
 
+        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.DPAD_LEFT)
+                .whenPressed(()-> elevador.mid());
+
+        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.DPAD_UP)
+                .whenPressed(()-> elevador.leave());
+
+        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.DPAD_RIGHT)
+                .whenPressed(()-> elevador.recall());
+
         new GamepadButton(new GamepadEx(gamepad2), GamepadKeys.Button.A)
                 .whenPressed(()-> escalador.setPosition(0));
 

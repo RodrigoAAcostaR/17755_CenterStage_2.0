@@ -38,7 +38,8 @@ public class RojoMidLrg extends SequentialCommandGroup {
                 new WaitCommand(500),
                 new TrajectoryFollowerCommand(drive, redLong.redMidLrg6(drive.getDrive())),
                 new InstantCommand(elevador::recall),
-                new TrajectoryFollowerCommand(drive, redLong.redMidLrg7(drive.getDrive()))
+                new TrajectoryFollowerCommand(drive, redLong.redMidLrg7(drive.getDrive())),
+                new IntakeCommand(intake, -1)
         );
 
     }
