@@ -26,7 +26,7 @@ public class Intake extends SubsystemBase {
         intake.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         x2.setInverted(true);
 
-        servoB();
+        servoA();
     }
 
     public void setPower(double power){
@@ -34,13 +34,13 @@ public class Intake extends SubsystemBase {
     }
 
     public void servoA(){
-        x1.turnToAngle(45);
-        x2.turnToAngle(45);
+        x1.turnToAngle(0);
+        x2.turnToAngle(0);
     }
 
     public void servoB(){
-        x1.turnToAngle(75);
-        x2.turnToAngle(75);
+        x1.turnToAngle(180);
+        x2.turnToAngle(180);
     }
 
     public void stack(){

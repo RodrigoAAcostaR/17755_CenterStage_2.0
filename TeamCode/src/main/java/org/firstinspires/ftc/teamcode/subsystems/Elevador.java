@@ -25,6 +25,7 @@ public class Elevador extends SubsystemBase {
         elevator = hardwareMap.get(DcMotorEx.class, "elevador");
         elevator.setDirection(DcMotorSimple.Direction.REVERSE);
         elevator.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        elevator.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
         recall();
     }

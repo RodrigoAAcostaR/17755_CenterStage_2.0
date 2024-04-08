@@ -26,7 +26,7 @@ public class ElevadorDefault extends CommandBase {
     @Override
     public void execute() {
         //Por poder
-
+/*
         if(gamepad.getTrigger(GamepadKeys.Trigger.RIGHT_TRIGGER) > .5){
             elevator.setPower(1);
         }else if(gamepad.getTrigger(GamepadKeys.Trigger.RIGHT_TRIGGER) > 0){
@@ -38,18 +38,20 @@ public class ElevadorDefault extends CommandBase {
             elevator.setPower(0);
         }
 
+ */
 
 
 
-/*
+
+
         //Por posiciones
         if(gamepad.getTrigger(GamepadKeys.Trigger.RIGHT_TRIGGER) > .5){
-            CommandScheduler.getInstance().schedule(new InstantCommand(intake::servoA));
-            CommandScheduler.getInstance().schedule(new ElevadorGoToPosition(elevator, 1100));
+            //CommandScheduler.getInstance().schedule(new InstantCommand(intake::servoA));
+            CommandScheduler.getInstance().schedule(new ElevadorGoToPosition(elevator, 1180));
         }
 
         if (gamepad.getTrigger(GamepadKeys.Trigger.LEFT_TRIGGER) > .5){
-            CommandScheduler.getInstance().schedule(new InstantCommand(intake::servoA));
+            //CommandScheduler.getInstance().schedule(new InstantCommand(intake::servoA));
             CommandScheduler.getInstance().schedule(new ElevadorGoToPosition(elevator, 0));
         }
 
@@ -57,7 +59,7 @@ public class ElevadorDefault extends CommandBase {
             intake.dejar();
         }
 
- */
+
 
 
 
